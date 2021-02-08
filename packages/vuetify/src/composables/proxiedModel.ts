@@ -6,9 +6,9 @@ import { ref, computed, getCurrentInstance, capitalize } from 'vue'
 import { consoleError } from '../util/console'
 
 export function useProxiedModel<
-  Inner,
   Props extends object,
   Prop extends Extract<keyof Props, string>,
+  Inner = Props[Prop],
 > (
   props: Props,
   prop: Prop,
